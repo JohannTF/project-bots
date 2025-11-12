@@ -10,9 +10,9 @@ npm install
 ```
 
 ### 2. Copia el archivo de ejemplo y configura tus variables
-´´´ bash
+```bash
 cp .env.example .env
-´´´
+```
 
 ### 3. Configurar base de datos
 Asegúrate de que PostgreSQL esté corriendo y crea la base de datos:
