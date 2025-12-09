@@ -3,11 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usuario</title>
+  <title>Panel de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .user-info {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .user-info p {
+      margin: 10px 0;
+      color: #555;
+    }
+    .user-info strong {
+      color: #333;
+    }
+    .logout-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #dc3545;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+    .admin-link {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .admin-link:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <h2>Página de Usuario</h2>
-  <p>Bienvenido, usuario.</p>
-  <a href="/logout">Cerrar sesión</a>
+  <div class="container">
+    <h2>Panel de Usuario</h2>
+    
+    <div class="user-info">
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>Rol:</strong> <%= user.role %></p>
+      <p><strong>ID:</strong> <%= user.id %></p>
+    </div>
+
+    <% if (user.role === 'admin') { %>
+      <a href="/admin" class="admin-link">Panel de Administrador</a>
+    <% } %>
+    
+    <a href="/logout" class="logout-btn">Cerrar sesión</a>
+  </div>
 </body>
 </html>

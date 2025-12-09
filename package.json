@@ -1,14 +1,26 @@
 {
   "name": "proyecto-robots",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "create-admin": "node scripts/createAdmin.js",
+    "test-bot": "node test/fast_submit.js",
+    "migrate": "npx prisma migrate dev",
+    "generate": "npx prisma generate",
+    "studio": "npx prisma studio"
   },
-  "keywords": [],
+  "keywords": [
+    "security",
+    "authentication",
+    "bot-detection",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Sistema de autenticación con detección de bots por tiempo mínimo de respuesta",
   "devDependencies": {
     "node-fetch": "^3.3.2",
     "prisma": "^6.19.0"
