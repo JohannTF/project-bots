@@ -21,7 +21,7 @@ export function showRegister(req, res) {
 /**
  * Registra un nuevo usuario en el sistema
  */
-/*export async function registerUser(req, res) {
+export async function registerUser(req, res) {
   try {
     const { email, password } = req.body;
 
@@ -70,12 +70,12 @@ export function showRegister(req, res) {
     console.error("Error en registro:", error);
     res.status(500).send("Error al registrar usuario");
   }
-}*/
+}
 
 /**
  * Autentica un usuario y crea su sesión
  */
-/*export async function loginUser(req, res) {
+export async function loginUser(req, res) {
   try {
     const { email, password } = req.body;
 
@@ -119,7 +119,7 @@ export function showRegister(req, res) {
     console.error("Error en login:", error);
     res.status(500).send("Error al iniciar sesión");
   }
-}*/
+}
 
 /**
  * Cierra la sesión del usuario
